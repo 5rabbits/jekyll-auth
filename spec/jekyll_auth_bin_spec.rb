@@ -39,6 +39,6 @@ describe "bin" do
 
   it "builds the site" do
     execute_bin({}, "build")
-    expect(File).to exist("#{tmp_dir}/_site/index.html")
+    expect(File).to exist("#{tmp_dir}/_book/index.html")
   end
 end

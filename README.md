@@ -39,7 +39,7 @@ Remember the 'my-site' part for later on when using `heroku create`. Also, my-si
   gem 'jekyll-auth'
   ```
 
-2. `cd` into your project's directory and run `bundle install`. If you get an error using `bundle install`, see Troubleshooting below. 
+2. `cd` into your project's directory and run `bundle install`. If you get an error using `bundle install`, see Troubleshooting below.
 
 3. Run `bundle exec jekyll-auth new` which will copy the necessary files to set up the server
 
@@ -138,7 +138,7 @@ GITHUB_TEAM_ID=12345
 
 Every time you push to Heroku, we take advantage of the fact that Heroku automatically runs the `rake assets:precompile` command (normally used for Rails sites) to build our Jekyll site and store it statically, just like GitHub pages would.
 
-Anytime a request comes in for a page, we run it through [Sinatra](http://www.sinatrarb.com/) (using the `_site` folder as the static file folder, just as `public` would be normally), and authenticate it using [sinatra_auth_github](https://github.com/atmos/sinatra_auth_github).
+Anytime a request comes in for a page, we run it through [Sinatra](http://www.sinatrarb.com/) (using the `_book` folder as the static file folder, just as `public` would be normally), and authenticate it using [sinatra_auth_github](https://github.com/atmos/sinatra_auth_github).
 
 If they're in the org, they get the page. Otherwise, all they ever get is [the bouncer](http://octodex.github.com/bouncer/).
 
@@ -162,10 +162,10 @@ remote:                            ------------------------------------
 remote:                            Invalid date '0000-00-00': Post '/vendor/bundle/ruby/2.0.0/gems/jekyll-2.5.3/lib/site_template/_posts/0000-00-00-welcome-to-jekyll.markdown.erb' does not have a valid date in the filename.
 ```
 
-* **Pushing to heroku**. If you are working from a new github-cloned repo (where you have not run `heroku create`), you may also want to push to heroku. You do not add the remote in the standard way using git, but instead do this: 
+* **Pushing to heroku**. If you are working from a new github-cloned repo (where you have not run `heroku create`), you may also want to push to heroku. You do not add the remote in the standard way using git, but instead do this:
 
 ```
-heroku git:remote -a my-site 
+heroku git:remote -a my-site
 ```
 
 

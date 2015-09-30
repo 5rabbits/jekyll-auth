@@ -35,7 +35,7 @@ describe "jekyll site" do
   end
 
   it "serves a custom 404" do
-    File.write File.expand_path("_site/404.html", tmp_dir), "My custom 404"
+    File.write File.expand_path("_book/404.html", tmp_dir), "My custom 404"
     get "/a-bad-path"
     expect(last_response.status).to eql(404)
     expect(last_response.body).to eql("My custom 404")
